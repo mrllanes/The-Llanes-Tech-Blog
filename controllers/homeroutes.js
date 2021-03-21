@@ -14,7 +14,7 @@ try {
     ],
     });
 
-    // Serialize data so the template can read it
+    // Serialize data for template
     const posts = postData.map((post) => post.get({ plain: true }));
 
     // Pass serialized data and session flag into template
@@ -49,10 +49,10 @@ router.get('/post-routes/:id', async (req, res) => {
     }
 });
 
-// Use withAuth middleware to prevent access to route
+// Use withAuth to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
     try {
-        // Find the logged in user based on the session ID
+        // Find the logged in user by the session ID
         const userData = await User.findByPk(req.session.user_id, {
         attributes: { exclude: ['password'] },
         include: [{ model: Post }],
@@ -70,7 +70,7 @@ router.get('/profile', withAuth, async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-    // If the user is already logged in, redirect the request to another route
+    // If user is already logged in, redirect the request to another route
     if (req.session.logged_in) {
         res.redirect('/profile');
         return;
