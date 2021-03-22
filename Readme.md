@@ -4,6 +4,7 @@
 
 ## Deployed site
 
+-   https://git.heroku.com/powerful-forest-46191.git (Heroku Deployed)
 -   https://mrllanes.github.io/The-Llanes-Tech-Blog/
 -   https://github.com/mrllanes/The-Llanes-Tech-Blog
 -   
