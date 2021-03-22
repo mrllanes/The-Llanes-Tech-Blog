@@ -36,6 +36,6 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(routes);
 
-sequelize.sync({ force: true }).then(() => { //change to False after models are done, to hold databse
+sequelize.sync({ force: true }).then(() => { //change to False after models are done, to hold database
 	app.listen(PORT, () => console.log(`Now listening on ${PORT}`));
 });
